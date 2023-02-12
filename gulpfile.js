@@ -15,9 +15,9 @@ const sass = require('gulp-sass')(require('sass'))
  * destination folder.
  */
 function buildStyles() {
-    /* using '*' will look for any filename with
-    this extension & compiles it */
-    return src('*.scss')
+    /* '**' denotes any subfolder with a sass file 
+    or sass file inside the folder 'shinobi' */
+    return src('shinobi/**/*.scss')
         .pipe(sass())
         .pipe(dest('css'))
 }
@@ -28,7 +28,7 @@ function buildStyles() {
  * automatically run buildStyles() function for us.
  */
 function watchTask() {
-    watch(['*.scss'], buildStyles)
+    watch(['shinobi/**/*.scss'], buildStyles)
 }
 
 /* we can use series() function to export
