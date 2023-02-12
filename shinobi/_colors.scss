@@ -1,0 +1,38 @@
+// To cycle through the collection of variables in '$colors' map, we can use loops i.e @each rule
+@each $key,$val in $colors {
+    .text-#{$key} {
+        color: $val;
+    }
+
+    .bg-#{$key} {
+        background-color: $val;
+    }
+
+    // light variations
+    @for $i from 1 through 9 {
+        .text-#{$key}-light-#{$i} {
+            // we wanna mix two colors i.e. white as 1st argument with
+            // $val as 2nd argument and then 3rd argument is basically
+            // how much we want to mix it in percent 
+            color: mix(white, $val, $i * 10);   // To make the color light mix it with white color using builtin mix() function
+        }
+
+        .bg-#{$key}-light-#{$i} { 
+            background-color: mix(white, $val, $i * 10);
+        }    
+    }
+
+    // dark variations
+    @for $i from 1 through 9 {
+        .text-#{$key}-dark-#{$i} {
+            // we wanna mix two colors i.e. white as 1st argument with
+            // $val as 2nd argument and then 3rd argument is basically
+            // how much we want to mix it in percent 
+            color: mix(black, $val, $i * 10);   // To make the color light mix it with white color using builtin mix() function
+        }
+
+        .bg-#{$key}-dark-#{$i} { 
+            background-color: mix(black, $val, $i * 10);
+        }    
+    }
+}
