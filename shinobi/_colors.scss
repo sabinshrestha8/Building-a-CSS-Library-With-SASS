@@ -4,6 +4,14 @@
         color: $val;
     }
 
+    .text-hover-#{$key} {
+        // we can use '&' to reference the parent then colon
+        // & whatever pseudo selector you want to use 
+        &:hover {
+            color: $val;
+        }
+    }
+
     .bg-#{$key} {
         background-color: $val;
     }
@@ -17,16 +25,27 @@
                 // how much we want to mix it in percent 
                 color: mix(white, $val, $i * 10%);   // To make the color light mix it with white color using builtin mix() function
             }
+            .text-hover-#{$key}-light-#{$i} {
+                &:hover {
+                    color: mix(white, $val, $i * 10%);
+                }
+            }
 
             .bg-#{$key}-light-#{$i} { 
                 background-color: mix(white, $val, $i * 10%);
-            }    
+            }
+
         }
 
         // dark variations
         @for $i from 1 through 9 {
             .text-#{$key}-dark-#{$i} {
                 color: mix(black, $val, $i * 10%);
+            }
+            .text-hover-#{$key}-dark-#{$i} {
+                &:hover {
+                    color: mix(black, $val, $i * 10%);
+                }
             }
 
             .bg-#{$key}-dark-#{$i} { 
@@ -36,13 +55,4 @@
     }
 }
 
-// if statement 
-// @if(10 < 5) {
-//     .test-if {
-//         color: black;
-//     }
-// } @else {
-//     .test-if-2 {
-//         color: white;
-//     }
-// }
+// nth-child, active, visited, last-child etc
