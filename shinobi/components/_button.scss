@@ -1,41 +1,38 @@
 // Mixins can be defined using the @mixin rule, which is written as
 // @mixin <name> { ... } or @mixin name(<arguments...>) { ... }.
-@mixin btn() {
+@mixin btn($bg-color: #e2e2e2) {
     text-decoration: none;
     cursor: pointer;
     display: inline-block;
     border: 0;
     padding: $base-padding $base-padding * 2;
     border-radius: $base-border-radius;
+    background-color: $bg-color;
+}
+
+.btn {
+    @include btn;
 }
 
 @each $key, $val in $colors {
     .btn-#{$key} {
-        // text-decoration: none;
-        // cursor: pointer;
-        // display: inline-block;
-        // border: 0;
-        // padding: $base-padding $base-padding * 2;
-        // border-radius: $base-border-radius;
-
         // To include a Mixin:
         // selector {
         //     @include mixin-name;
         // }
-        @include btn();
-        background-color: $val;
+        @include btn($val);
+        &:hover {
+            // builtin sass function lighten() takes the color as 1st argument
+            // & takes bumber as 2nd argument value to lighten it by certain percent 
+            background-color: lighten($val, 5);
+        }
     }
 
     .btn-outlined-#{$key} {
-        // text-decoration: none;
-        // cursor: pointer;
-        // display: inline-block;
-        // border: 0;
-        // padding: $base-padding $base-padding * 2;
-        // border-radius: $base-border-radius;
-
-        @include btn();
-        background-color: #fff;
+        @include btn(#fff);
         border: $base-border-thickness solid $val;
+        &:hover {
+            background-color: $val;
+        }
     }
 }
