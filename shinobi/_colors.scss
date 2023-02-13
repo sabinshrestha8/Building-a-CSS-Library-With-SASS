@@ -9,30 +9,40 @@
     }
 
     // light variations
-    @for $i from 1 through 9 {
-        .text-#{$key}-light-#{$i} {
-            // we wanna mix two colors i.e. white as 1st argument with
-            // $val as 2nd argument and then 3rd argument is basically
-            // how much we want to mix it in percent 
-            color: mix(white, $val, $i * 10);   // To make the color light mix it with white color using builtin mix() function
+    @if($val != black and $val != white) {
+        @for $i from 1 through 9 {
+            .text-#{$key}-light-#{$i} {
+                // we wanna mix two colors i.e. white as 1st argument with
+                // $val as 2nd argument and then 3rd argument is basically
+                // how much we want to mix it in percent 
+                color: mix(white, $val, $i * 10%);   // To make the color light mix it with white color using builtin mix() function
+            }
+
+            .bg-#{$key}-light-#{$i} { 
+                background-color: mix(white, $val, $i * 10%);
+            }    
         }
 
-        .bg-#{$key}-light-#{$i} { 
-            background-color: mix(white, $val, $i * 10);
-        }    
-    }
+        // dark variations
+        @for $i from 1 through 9 {
+            .text-#{$key}-dark-#{$i} {
+                color: mix(black, $val, $i * 10%);
+            }
 
-    // dark variations
-    @for $i from 1 through 9 {
-        .text-#{$key}-dark-#{$i} {
-            // we wanna mix two colors i.e. white as 1st argument with
-            // $val as 2nd argument and then 3rd argument is basically
-            // how much we want to mix it in percent 
-            color: mix(black, $val, $i * 10);   // To make the color light mix it with white color using builtin mix() function
-        }
-
-        .bg-#{$key}-dark-#{$i} { 
-            background-color: mix(black, $val, $i * 10);
+            .bg-#{$key}-dark-#{$i} { 
+                background-color: mix(black, $val, $i * 10%);
+            }    
         }    
     }
 }
+
+// if statement 
+// @if(10 < 5) {
+//     .test-if {
+//         color: black;
+//     }
+// } @else {
+//     .test-if-2 {
+//         color: white;
+//     }
+// }
