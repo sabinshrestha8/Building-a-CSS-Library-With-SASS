@@ -1,0 +1,41 @@
+// Mixins can be defined using the @mixin rule, which is written as
+// @mixin <name> { ... } or @mixin name(<arguments...>) { ... }.
+@mixin btn() {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: $base-padding $base-padding * 2;
+    border-radius: $base-border-radius;
+}
+
+@each $key, $val in $colors {
+    .btn-#{$key} {
+        // text-decoration: none;
+        // cursor: pointer;
+        // display: inline-block;
+        // border: 0;
+        // padding: $base-padding $base-padding * 2;
+        // border-radius: $base-border-radius;
+
+        // To include a Mixin:
+        // selector {
+        //     @include mixin-name;
+        // }
+        @include btn();
+        background-color: $val;
+    }
+
+    .btn-outlined-#{$key} {
+        // text-decoration: none;
+        // cursor: pointer;
+        // display: inline-block;
+        // border: 0;
+        // padding: $base-padding $base-padding * 2;
+        // border-radius: $base-border-radius;
+
+        @include btn();
+        background-color: #fff;
+        border: $base-border-thickness solid $val;
+    }
+}
