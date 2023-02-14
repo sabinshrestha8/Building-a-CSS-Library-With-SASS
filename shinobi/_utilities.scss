@@ -1,0 +1,44 @@
+@use 'sass:math';
+
+// utilities map
+$utilities: (
+    "padding": ( // this will be basically our root class name
+        "prefix": "p",
+        "values": ("0": 0,
+            "1": $base-padding,
+            "2": $base-padding * 2,
+            "3": $base-padding * 4,
+            "4": $base-padding * 6,
+            "5": $base-padding * 8)),
+    "padding-left": ("prefix": "pl",
+        "values": ("0": 0,
+            "1": $base-padding,
+            "2": $base-padding * 2,
+            "3": $base-padding * 4,
+            "4": $base-padding * 6,
+            "5": $base-padding * 8),
+    ),
+);
+
+// generate utility classes
+// for each property map in ulilities which is the top-level map '$utilities'.
+// So, we are cycling through that & for each one we are getting 'prefix' & 'values'
+// for each property in the map & storing it in '$prefix' & '$values' variable
+@each $property, $map in $utilities {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+        @if($k =="default") {
+            .#{$prefix} {
+                #{$property}: $v;
+            }
+        }
+
+        @else {
+            .#{$prefix}-#{$k} {
+                #{$property}: $v;
+            }
+        }
+    }
+}
