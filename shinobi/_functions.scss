@@ -1,0 +1,8 @@
+// light-comp() function takes a color & lighten it to centain percent
+@function light-comp($color) {
+    // To get the complementary color there is a built-in
+    // function in sass named 'complement()'.
+    $complement: complement($color);
+    $light-complement: lighten($complement, 30%);
+    @return $light-complement;
+}
