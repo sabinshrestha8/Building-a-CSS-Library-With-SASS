@@ -1,0 +1,27 @@
+// we can also add these style inside directly .navbar rule
+// but it would make these group of properties less reusable
+.flex-layout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+// basic navbar rule
+.navbar {
+    // To add .flex-layout class properties inside .navbar class, 
+    // we can use @extend rule which will basically inherit the
+    // properties of .flex-layout into the .navbar class.
+    @extend .flex-layout;
+    padding: $base-padding $base-padding * 2;
+    box-shadow: $base-box-shadow;
+
+    .site-title {
+        font-size: $font-size-lg;
+    }
+
+    .container {
+        @extend .flex-layout;
+    }
+}
