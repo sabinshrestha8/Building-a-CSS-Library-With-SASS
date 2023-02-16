@@ -7,6 +7,8 @@ at the end then we need to pass in our set compiler that we
 also installed i.e. sass compiler */
 const sass = require('gulp-sass')(require('sass'))
 
+// require & load the purgecss plugin into the gulpfile
+const purgecss = require('gulp-purgecss')
 
 /**
  * This function is responsible for compiling sass file into css
@@ -19,6 +21,9 @@ function buildStyles() {
     or sass file inside the folder 'shinobi' */
     return src('shinobi/**/*.scss')
         .pipe(sass())
+        /* incorporate purgecss into buildstyles() function by chaining into
+        pipe() method & invoke the returned function within the require. */
+        .pipe(purgecss({ content: ['*.html'] }))    // content property tell the plugin which files to look in to determine what css rules we are using for out website
         .pipe(dest('css'))
 }
 
@@ -28,7 +33,7 @@ function buildStyles() {
  * automatically run buildStyles() function for us.
  */
 function watchTask() {
-    watch(['shinobi/**/*.scss'], buildStyles)
+    watch(['shinobi/**/*.scss', '*.html'], buildStyles)
 }
 
 /* we can use series() function to export
