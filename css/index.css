@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 /* reset styles */
 * {
   color: inherit;
@@ -95,43 +94,43 @@ img {
   }
 }
 .text-primary {
-  color: #326dee;
+  color: indigo;
 }
 
 .bg-primary {
-  background-color: #326dee;
+  background-color: indigo;
 }
 
 .bg-primary-light-2 {
-  background-color: #5b8af1;
+  background-color: #6f339b;
 }
 
 .bg-primary-light-4 {
-  background-color: #84a7f5;
+  background-color: #9366b4;
 }
 
 .bg-primary-light-6 {
-  background-color: #adc5f8;
+  background-color: #b799cd;
 }
 
 .bg-primary-light-8 {
-  background-color: #d6e2fc;
+  background-color: #dbcce6;
 }
 
 .bg-primary-dark-2 {
-  background-color: #2857be;
+  background-color: #3c0068;
 }
 
 .bg-primary-dark-4 {
-  background-color: #1e418f;
+  background-color: #2d004e;
 }
 
 .bg-primary-dark-6 {
-  background-color: #142c5f;
+  background-color: #1e0034;
 }
 
 .bg-primary-dark-8 {
-  background-color: #0a1630;
+  background-color: #0f001a;
 }
 
 .text-secondary {
@@ -240,14 +239,14 @@ img {
 
 .card {
   display: block;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
+  padding: 1rem;
+  border: 3px solid #ddd;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
 .card .card-title {
   font-size: 1.5rem;
-  padding: 0.75rem;
+  padding: 1rem;
   font-weight: bold;
 }
 .card .card-body {
@@ -262,7 +261,7 @@ img {
   cursor: pointer;
   display: inline-block;
   border: 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   background-color: #e2e2e2;
 }
@@ -272,12 +271,12 @@ img {
   cursor: pointer;
   display: inline-block;
   border: 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
-  background-color: #326dee;
+  background-color: indigo;
 }
 .btn-primary:hover {
-  background-color: #4a7ef0;
+  background-color: #5a009c;
 }
 
 .btn-complement-primary {
@@ -285,14 +284,14 @@ img {
   cursor: pointer;
   display: inline-block;
   border: 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
-  background-color: #326dee;
-  color: #fae7bf;
+  background-color: indigo;
+  color: #7cff1c;
 }
 .btn-complement-primary:hover {
-  color: #326dee;
-  background-color: #fae7bf;
+  color: indigo;
+  background-color: #7cff1c;
 }
 
 .btn-secondary {
@@ -300,7 +299,7 @@ img {
   cursor: pointer;
   display: inline-block;
   border: 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   background-color: #1ac888;
 }
@@ -313,10 +312,10 @@ img {
   cursor: pointer;
   display: inline-block;
   border: 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   background-color: #fff;
-  border: 1px solid #1ac888;
+  border: 3px solid #1ac888;
 }
 .btn-outlined-secondary:hover {
   background-color: #1ac888;
@@ -327,7 +326,7 @@ img {
   cursor: pointer;
   display: inline-block;
   border: 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   background-color: #d32752;
 }
@@ -340,7 +339,7 @@ img {
   cursor: pointer;
   display: inline-block;
   border: 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   background-color: #f6c31c;
 }
@@ -353,10 +352,10 @@ img {
   cursor: pointer;
   display: inline-block;
   border: 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   background-color: #fff;
-  border: 1px solid #ffa600;
+  border: 3px solid #ffa600;
 }
 .btn-outlined-orange:hover {
   background-color: #ffa600;
@@ -367,10 +366,10 @@ img {
   cursor: pointer;
   display: inline-block;
   border: 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   background-color: #fff;
-  border: 1px solid #9900ff;
+  border: 3px solid #9900ff;
 }
 .btn-outlined-purple:hover {
   background-color: #9900ff;
@@ -381,7 +380,7 @@ img {
   cursor: pointer;
   display: inline-block;
   border: 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   background-color: #9900ff;
   color: #c2ff99;
@@ -391,7 +390,7 @@ img {
   background-color: #c2ff99;
 }
 
-.navbar .container, .navbar-secondary .container, .navbar, .navbar-secondary {
+.navbar .container, .navbar-primary .container, .navbar, .navbar-primary {
   width: 100%;
   display: flex;
   align-items: center;
@@ -399,16 +398,15 @@ img {
   box-sizing: border-box;
 }
 
-.navbar, .navbar-secondary {
-  padding: 0.75rem 1.5rem;
+.navbar, .navbar-primary {
+  padding: 1rem 2rem;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
-.navbar .site-title, .navbar-secondary .site-title {
+.navbar .site-title, .navbar-primary .site-title {
   font-size: 1.5rem;
 }
-
-.navbar-secondary {
-  background-color: #1ac888;
+.navbar-primary {
+  background-color: indigo;
 }
 
 .p-0 {
@@ -416,19 +414,19 @@ img {
 }
 
 .pt-3 {
-  padding-top: 3rem;
+  padding-top: 4rem;
 }
 
 .pt-4 {
-  padding-top: 4.5rem;
+  padding-top: 6rem;
 }
 
 .pb-3 {
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
 }
 
 .pb-4 {
-  padding-bottom: 4.5rem;
+  padding-bottom: 6rem;
 }
 
 .m-1 {

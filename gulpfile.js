@@ -19,8 +19,9 @@ const purgecss = require('gulp-purgecss')
 function buildStyles() {
     /* '**' denotes any subfolder with a sass file 
     or sass file inside the folder 'shinobi' */
-    return src('shinobi/**/*.scss')
+    return src('sass/**/*.scss')
         .pipe(sass())
+        // .pipe(sass({ outputStyle: 'compressed' }))
         /* incorporate purgecss into buildstyles() function by chaining into
         pipe() method & invoke the returned function within the require. */
         .pipe(purgecss({ content: ['*.html'] }))    // content property tell the plugin which files to look in to determine what css rules we are using for out website
@@ -33,7 +34,7 @@ function buildStyles() {
  * automatically run buildStyles() function for us.
  */
 function watchTask() {
-    watch(['shinobi/**/*.scss', '*.html'], buildStyles)
+    watch(['sass/**/*.scss', '*.html'], buildStyles)
 }
 
 /* we can use series() function to export
