@@ -2,6 +2,15 @@
 
 // number of columns we want to set in our grid i.e. For eg: 12
 $grid-columns: 12;
+$grid-gaps: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px
+);
+
+// List in sass. A list is just a list of values which are comma separated
+$layout-values: flex-start, flex-end, center, space-between, space-around;
 
 // base layout classes
 .container {
@@ -18,6 +27,25 @@ $grid-columns: 12;
 .row {
     display: flex;
     flex-flow: row wrap;
+}
+
+// grid gaps
+@each $key, $val in $grid-gaps {
+    .gap-#{$key} > * {
+        padding: $val;
+    }
+
+    .gap-#{$key} {
+        margin-left: -$val;
+        margin-left: -$val;
+    }
+}
+
+// justify content classes
+@each $val in $layout-values {
+    .justify-#{$val} {
+        justify-content: $val;
+    }
 }
 
 // column classes i.e. For eg: .col-xs-12 .col-md-6
